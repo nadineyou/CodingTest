@@ -1,9 +1,10 @@
 class Person(object):
 
     def __init__(self, initial_age):
-        if initial_age < 0 or isinstance(initial_age,str) or isinstance(initial_age,float):
-            raise ValueError("Age must be an integer equal or greater than 0")
-        self.initial_age = initial_age
+        if isinstance(initial_age, int):
+            self.age = initial_age
+        else:
+            raise ValueError("Age must be an integer equal to or greater than 0")
 
 
     def what_am_i(self):
